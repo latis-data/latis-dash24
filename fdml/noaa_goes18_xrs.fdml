@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset id="noaa_goes18_xrs"
+         temporalCoverage="2022-09-02/"
+         class="latis.dataset.GranuleAppendDataset">
+  <source>
+    <dataset>
+      <source uri="https://data.ngdc.noaa.gov/platforms/solar-space-observing-satellites/goes/goes18/l2/data/xrsf-l2-avg1m_science/"/>
+      <adapter class="latis.input.GranuleListGenerator"
+               pattern="sci_xrsf-l2-avg1m_g18_y%1$tY_v2-2-0.nc"
+               start="2022"
+               step="P1Y"/>
+      <function>
+        <scalar id="time"
+                type="string"
+                units="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                class="latis.time.Time"/>
+        <scalar id="uri"
+                type="string"/>
+      </function>
+    </dataset>
+  </source>
+
+  <adapter class="latis.input.NetcdfAdapter"/>
+
+  <function>
+    <scalar id="time"
+            units="seconds since 2000-01-01T12:00:00"
+            type="double"
+            class="latis.time.Time"/>
+    <tuple>
+      <scalar id="xrsa_flux"
+              title="XRS-A primary average flux"
+              type="float"
+              units="W/m^2"
+              missingValue="-9999"/>
+      <scalar id="xrsb_flux"
+              title="XRS-B primary average flux"
+              type="float"
+              units="W/m^2"
+              missingValue="-9999"/>
+    </tuple>
+  </function>
+
+</dataset>
