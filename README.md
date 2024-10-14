@@ -16,7 +16,7 @@ http://localhost:8080/dap2/
 Or use the standard HAPI interfaces:
 
 ```
-http://localhost:8080/hapi/
+http://localhost:8080/hapi
 ```
 
 You should then be able to request data with HTTP queries like:
