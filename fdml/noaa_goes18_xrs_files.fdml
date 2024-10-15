@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-    <dataset>
-      <source uri="https://data.ngdc.noaa.gov/platforms/solar-space-observing-satellites/goes/goes18/l2/data/xrsf-l2-avg1m_science/"/>
-      <adapter class="latis.input.GranuleListGenerator"
-               pattern="sci_xrsf-l2-avg1m_g18_y%1$tY_v2-2-0.nc"
-               start="2022"
-               step="P1Y"/>
-      <function>
-        <scalar id="time"
-                type="string"
-                units="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-                binWidth="86400000"
-                class="latis.time.Time"/>
-        <scalar id="uri"
-                type="string"/>
-      </function>
-    </dataset>
+<dataset id="noaa_goes18_xrs_files">
+  <source uri="https://data.ngdc.noaa.gov/platforms/solar-space-observing-satellites/goes/goes18/l2/data/xrsf-l2-avg1m_science/"/>
+  <adapter class="latis.input.GranuleListGenerator"
+           pattern="sci_xrsf-l2-avg1m_g18_y%1$tY_v2-2-0.nc"
+           start="2022"
+           step="P1Y"/>
+  <function>
+    <scalar id="time"
+            type="string"
+            units="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+            binWidth="31536000000"
+            class="latis.time.Time"/>
+    <scalar id="uri"
+            type="string"/>
+  </function>
+</dataset>

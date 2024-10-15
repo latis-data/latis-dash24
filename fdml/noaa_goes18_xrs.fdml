@@ -14,6 +14,7 @@
         <scalar id="time"
                 type="string"
                 units="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                binWidth="31536000000"
                 class="latis.time.Time"/>
         <scalar id="uri"
                 type="string"/>
